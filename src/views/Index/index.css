@@ -1,0 +1,92 @@
+#root {
+    background-color: #1b2838;
+}
+
+.card {
+    background-color: #2a475e !important;
+}
+#index{
+    min-height: 100vh;
+    height: fit-content;
+}
+
+#index .card:hover {
+    transform: scale(1.03);
+    transition: 400ms all ease;
+    background-color: #66c0f4 !important;
+}
+
+#index .card:hover h2 {
+    color: #171a21;
+}
+
+#index .card:hover p {
+    color: #171a21;
+}
+
+h1 {
+    font-weight: 700;
+    color: #fff;
+}
+
+h2 {
+    color: rgb(217, 217, 217);
+    font-weight: 400;
+}
+
+p {
+    color: #c7d5e0;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.discount {
+    color: #BEEE11;
+    font-size: 18px;
+    padding: 5px;
+    background-color: #4c6b22;
+    display: block;
+    text-align: center;
+    font-weight: 500;
+}
+.discountPrice{
+
+    color: #BEEE11;
+    font-size: 20px;
+}
+.imagen{
+    height: -webkit-fill-available;
+    width: 295px;
+    height: 110px;
+}
+
+.btn-steam{
+    background-color: rgb(42, 71, 94) !important;
+    color: rgb(102, 192, 244) !important;
+    font-size: 20px !important;
+}
+.precio{
+    font-size: 18px;
+}
+@media screen and (max-width:951px) {
+    .titulo{
+        font-size: 14px;
+    }
+    .descripcion{
+        font-size: 10px;
+    }
+    .precio{
+        font-size: 10px;
+    }
+    .discount{
+        font-size: 10px;
+    }
+    .discountPrice{
+        font-size: 12px;
+    }
+}
