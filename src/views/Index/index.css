@@ -81,12 +81,16 @@ a {
         font-size: 10px;
     }
     .precio{
-        font-size: 10px;
+        font-size: 10px !important;
     }
     .discount{
-        font-size: 10px;
+        font-size: 10px !important;
+        padding: 2px !important;
+        display: block !important;
+        text-align: center !important;
+        font-weight: 500 !important;
     }
     .discountPrice{
-        font-size: 12px;
+        font-size: 10px !important;
     }
 }
