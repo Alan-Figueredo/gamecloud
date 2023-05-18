@@ -9,6 +9,19 @@ import "./index.css"
 export const Index = () => {
     const { isLoading, separar, games, setPage, page, setParameter } = useOptionsContext()
     const [gamesToShow, setGamesToShow] = useState(6);
+
+    function isMobile() {
+        return (
+            (navigator.userAgent.match(/Android/i)) ||
+            (navigator.userAgent.match(/webOS/i)) ||
+            (navigator.userAgent.match(/iPhone/i)) ||
+            (navigator.userAgent.match(/iPod/i)) ||
+            (navigator.userAgent.match(/iPad/i)) ||
+            (navigator.userAgent.match(/BlackBerry/i))
+        );
+    }
+    console.log(isMobile())
+
     const handleScroll = () => {
         const scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
         const scrollHeight = (document.documentElement && document.documentElement.scrollHeight) || document.body.scrollHeight;
@@ -84,26 +97,26 @@ export const Index = () => {
                             <Link to={game.appId} >
 
                                 <Row>
-                                    <Col lg={4} className="col-3">
+                                    <Col lg={4} className="col-4">
                                         <img className="img-fluid imagen" src={game.imgUrl} alt={`${game.title} image`} />
                                     </Col>
-                                    <Col lg={6} className="col-6">
-                                        <h2 className="titulo">{game.title.length >= 30? game.title.slice(0, 30)+"..." : game.title}</h2>
-                                        <p className="descripcion">{`User Reviews: ${game.reviewSummary === undefined ? 'Unknown' : game.reviewSummary.slice(0, 110).split("<br>",10)}...`}</p>
+                                    <Col lg={6} className="col-5 p-0">
+                                        <h2 className="titulo">{game.title.length >= 30 ? game.title.slice(0, 30) + "..." : game.title}</h2>
+                                        <p className="descripcion">{`User Reviews: ${game.reviewSummary === undefined ? 'Unknown' : game.reviewSummary.slice(0, isMobile() !== null ? 38 : 110).split("<br>", 10)}...`}</p>
                                     </Col>
                                     <Col className="justify-content-center align-items-center">
                                         <Row className="mt-lg-2">
-                                            <Col lg={5} className="col-6">
+                                            <Col lg={5} className={`${separar(game.price) === 0 || isNaN(separar(game.price)) ? "col-0" : "col-6"}`}>
                                                 {separar(game.price) === 0 || isNaN(separar(game.price)) ? "" : <p className="discount">{'-' + separar(game.price) + '%'}</p>}
                                             </Col>
-                                            <Col lg={7} className="col-6">
-                                                <p className="precio" style={{ textDecoration: (game.price.split("€")[1]) !== undefined && (game.price.split("€")[1].length) < 8 ? "line-through" : " " }}>{`${game.price.split("€")[0]}  ${game.price.split("€")[0] === '                        Free to Play                    ' || game.price.split("€")[0] === '                                            ' || game.price.split("€")[0] === "Free" ? "" : "€"}`}</p>
+                                            <Col lg={7} className={`${separar(game.price) === 0 || isNaN(separar(game.price)) ? "col-12" : "col-6"}`}>
+                                                <p className="precio float-end pe-lg-0 pe-1" style={{ textDecoration: (game.price.split("€")[1]) !== undefined && (game.price.split("€")[1].length) < 8 ? "line-through" : " " }}>{`${game.price.split("€")[0]}  ${game.price.split("€")[0] === '                        Free to Play                    ' || game.price.split("€")[0] === "                        Free Demo                      " || game.price.split("€")[0] === '                                            ' || game.price.split("€")[0] === "Free" ? "" : "€"}`}</p>
                                             </Col>
                                         </Row>
                                         <Row>
                                             <Col></Col>
                                             <Col>
-                                                {game.price.split("€")[1] === undefined || (game.price.split("€")[1].length) > 8 ? "" : <p className="discountPrice pe-lg-4"> {`${game.price.split("€")[1]}€`}</p>}
+                                                {game.price.split("€")[1] === undefined || (game.price.split("€")[1].length) > 8 ? "" : <p className="discountPrice pe-lg-4 pe-1"> {`${game.price.split("€")[1]}€`}</p>}
                                             </Col>
                                         </Row>
                                     </Col>
