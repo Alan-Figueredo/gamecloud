@@ -1,7 +1,7 @@
 import { JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 
-export const GameAchievements = (props: { achievement: object; }) => {
+export const GameAchievements = (props: { achievement: any; }) => {
     const achievement = props.achievement;
     const [achieveQuantity, setAchieveQuantity] = useState(10)
     console.log(achievement)

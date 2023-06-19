@@ -1,6 +1,6 @@
 import { Card, Col, Row } from "react-bootstrap"
 
-export const GameContent = (props) => {
+export const GameContent = (props: { content: any; }) => {
     const content = props.content;
     return (
         <section >
@@ -8,7 +8,7 @@ export const GameContent = (props) => {
                 <>
                     <h2>CONTENT FOR THIS GAME</h2>
                     <hr style={{ color: "white" }} />
-                    {content?.DLCs.map((dlc) => {
+                    {content?.DLCs.map((dlc : {url:string; name:string; price:string}) => {
                         return (
                             <a href={`${dlc.url}`} target="_blank">
                                 <section className="card my-1">
