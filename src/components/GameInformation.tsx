@@ -5,7 +5,7 @@ export const GameInformation = (props) => {
     return (
         <Row>
             <Col className="mt-4 me-3" lg={8}>
-                <img src={game.imgUrl} alt={`${game.title} img`} style={{ width: "100%", height: "auto" }} />
+                <img src={game.imgUrl} alt={`${game?.title} img`} style={{ width: "100%", height: "auto" }} />
             </Col>
             <Col>
                 <p className="my-4" style={{ color: "#c6d4df", fontSize: "18px", fontWeight: "400" }}>{game.description}</p>

@@ -75,7 +75,7 @@ export const GameDetail = () => {
             <Container>
                 {game &&
                     <main>
-                        <h1 className="mt-4 mb-2">{game.title}</h1>
+                        <h1 className="mt-4 mb-2">{game?.title}</h1>
                         <GameInformation game={game} />
                         <Row className="gap-3 mt-5">
                             <PurchaseCard game={game} />

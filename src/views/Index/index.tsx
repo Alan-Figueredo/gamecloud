@@ -83,17 +83,17 @@ export const Index = () => {
                         </Row>
                     </Col>
                 </Row>
-                {games ? games.slice(0, gamesToShow).map((game: { appId: string | number | Partial<Path> | null | undefined; imgUrl: string | undefined; title: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; reviewSummary: string | undefined; price: string; }) => {
+                {games ? games.slice(0, gamesToShow).map((game: { appId: string | number | Partial<Path> | null | undefined; imgUrl: string | undefined; title: string; reviewSummary: string | undefined; price: string; }) => {
                     return (
                         <Col lg={10} className="card mt-3 m-auto" key={game.appId}>
                             <Link to={game.appId} >
 
                                 <Row>
                                     <Col lg={4} className="col-4">
-                                        <img className="img-fluid imagen" src={game.imgUrl} alt={`${game.title} image`} />
+                                        <img className="img-fluid imagen" src={game.imgUrl} alt={`${game?.title} image`} />
                                     </Col>
                                     <Col lg={6} className="col-5 p-0">
-                                        <h2 className="titulo">{game?.title.length >= 30 ? game?.title.slice(0, 30) + "..." : game.title}</h2>
+                                        <h2 className="titulo">{game?.title.length >= 30 ? game?.title.slice(0, 30) + "..." : game?.title}</h2>
                                         <p className="descripcion">{`User Reviews: ${game.reviewSummary === undefined ? 'Unknown' : game.reviewSummary.slice(0, isMobile() !== null ? 38 : 110).split("<br>", 10)+".."}`}</p>
                                     </Col>
                                     <Col className="justify-content-center align-items-center">

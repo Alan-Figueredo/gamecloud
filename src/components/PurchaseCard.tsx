@@ -6,7 +6,7 @@ export const PurchaseCard = (props: { game: any }) => {
         <section className="card purchaseCard col-lg-8 col-11  justify-content-center">
             <Row>
                 <Col lg={7}>
-                    <h2>{`Purchase ${game.title}`}</h2>
+                    <h2>{`Purchase ${game?.title}`}</h2>
                 </Col>
                 <Col className="floatCard me-lg-2 mx-2">
                     <Row className="bg-black">
