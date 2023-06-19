@@ -17,7 +17,16 @@ export const OptionsContextProvider = ({ children }) => {
         }
     };
 
-
+    function isMobile() {
+        return (
+            (navigator.userAgent.match(/Android/i)) ||
+            (navigator.userAgent.match(/webOS/i)) ||
+            (navigator.userAgent.match(/iPhone/i)) ||
+            (navigator.userAgent.match(/iPod/i)) ||
+            (navigator.userAgent.match(/iPad/i)) ||
+            (navigator.userAgent.match(/BlackBerry/i))
+        );
+    }
     //Funcion para separar precio sin descuento al precio con descuento
     const separar = (price: string) => {
         let precio = 0;
@@ -36,7 +45,7 @@ export const OptionsContextProvider = ({ children }) => {
         fetch(API_LINK, options).then(res => res.json()).then(data => { data && setGames(data); setIsLoading(false) });
     }, [page, parameter])
     return (
-        <OptionsContext.Provider value={{ separar, games, isLoading, setPage, page, setParameter }}>
+        <OptionsContext.Provider value={{ separar, games, isLoading, setPage, page, setParameter, isMobile }}>
             {children}
         </OptionsContext.Provider>
     )
