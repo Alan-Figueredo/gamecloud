@@ -21,7 +21,7 @@ export const GameDetail = () => {
     const [news, setNews] = useState()
     const [achievement, setAchievement] = useState()
 
-    const url = `https://steam2.p.rapidapi.com/appDetail/${gameID}`;
+    const url : string = `https://steam2.p.rapidapi.com/appDetail/${gameID}`;
 
     const options = {
         method: 'GET',
