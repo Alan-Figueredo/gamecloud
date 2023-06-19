@@ -9,7 +9,7 @@ export const GameReviews = (props: { reviewQuantity: any; gameReview: any; }) =>
         <div className="col-lg-8 col-12">
             <h2>REVIEWS</h2>
             <hr style={{ color: "white" }} />
-            {gameReview && gameReview?.reviews?.slice(1, reviewQuantity).map((review: { recommendationid: object | undefined }) => {
+            {gameReview && gameReview?.reviews?.slice(1, reviewQuantity).map((review: { recommendationid: string | undefined; review: string | undefined; voted_up: number | undefined; votes_up: number | undefined; votes_funny: number | undefined; }) => {
                 return (
                     <div key={review.recommendationid}>
                         <Row className="my-3">
