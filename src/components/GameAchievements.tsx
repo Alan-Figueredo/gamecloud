@@ -1,7 +1,7 @@
 import { JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 
-export const GameAchievements = (props) => {
+export const GameAchievements = (props: { achievement: object; }) => {
     const achievement = props.achievement;
     const [achieveQuantity, setAchieveQuantity] = useState(10)
     console.log(achievement)
@@ -19,7 +19,7 @@ export const GameAchievements = (props) => {
                             <h3 style={{ fontSize: "18px", color: "white" }}>% of all players</h3>
                         </Col>
                     </Row>
-                    {achievement && achievement?.achievementpercentages?.achievements.slice(0, achieveQuantity).map((achieve) => {
+                    {achievement && achievement?.achievementpercentages?.achievements.slice(0, achieveQuantity).map((achieve: { name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; percent: number; }) => {
                         return (
                             <Row className="px-3">
                                 <Col>
