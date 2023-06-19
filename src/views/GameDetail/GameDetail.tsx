@@ -16,12 +16,12 @@ export const GameDetail = () => {
     const [reviewQuantity, setReviewQuantity] = useState(15)
     const [hid, setHid] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
-    const [game, setGame] = useState()
-    const [gameReview, setGameReview] = useState()
+    const [game, setGame] = useState([] as any)
+    const [gameReview, setGameReview] = useState([] as any[])
     const [news, setNews] = useState()
     const [achievement, setAchievement] = useState()
 
-    const url : string = `https://steam2.p.rapidapi.com/appDetail/${gameID}`;
+    const url: string = `https://steam2.p.rapidapi.com/appDetail/${gameID}`;
 
     const options = {
         method: 'GET',
@@ -98,7 +98,7 @@ export const GameDetail = () => {
                             <GameReviews reviewQuantity={reviewQuantity} gameReview={gameReview && gameReview} />
                         </div>
                         <div className="py-5">
-                            {gameReview && gameReview.length > 10 &&  <Button hidden={hid} onClick={() => { setReviewQuantity(-1); setHid(true) }}>View all recommendations</Button>}
+                            {gameReview && gameReview?.length > 10 && <Button hidden={hid} onClick={() => { setReviewQuantity(-1); setHid(true) }}>View all recommendations</Button>}
                         </div>
                     </main>
                 }

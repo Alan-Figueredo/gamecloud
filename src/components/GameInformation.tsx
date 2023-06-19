@@ -1,6 +1,6 @@
 import { Col, Row } from "react-bootstrap";
 
-export const GameInformation = (props) => {
+export const GameInformation = (props: { game: any; }) => {
     const game = props.game;
     return (
         <Row>
@@ -15,7 +15,7 @@ export const GameInformation = (props) => {
                 <p style={{ color: "#556772" }}>Publisher: <a href={game.publisher?.link} target="_blank">{game.publisher?.name}</a></p>
                 <p style={{ color: "#556772", fontWeight: "400", fontSize: "19px" }}>Popular user-defined tags for this product:</p>
                 <Row className="ps-2">
-                    {game.tags && game.tags.slice(1, 5).map((tag: { name: boolean | Key | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | null | undefined; }) => {
+                    {game.tags && game.tags.slice(1, 5).map((tag: { name: string | undefined; url: string | undefined; }) => {
                         return (
                             <a href={tag.url} className="card text-center col-3 w-auto mx-1 my-1" key={tag.name}>{tag.name}</a>
                         )
