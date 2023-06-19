@@ -12,7 +12,7 @@ export const Index = () => {
 
 
 
-    const handlePrice = (price) => {
+    const handlePrice = (price: string) => {
         return price.split("€")[0].trim().toLowerCase()
     }
 
@@ -24,7 +24,7 @@ export const Index = () => {
         }
     };
 
-    function manejarKeyDown(evento) {
+    function manejarKeyDown(evento: { key: string; target: { value: any; }; }) {
         if (evento.key === 'Enter') {
             setParameter(evento.target.value)
             setPage(1)
@@ -94,7 +94,7 @@ export const Index = () => {
                                     </Col>
                                     <Col lg={6} className="col-5 p-0">
                                         <h2 className="titulo">{game?.title.length >= 30 ? game?.title.slice(0, 30) + "..." : game?.title}</h2>
-                                        <p className="descripcion">{`User Reviews: ${game.reviewSummary === undefined ? 'Unknown' : game.reviewSummary.slice(0, isMobile() !== null ? 38 : 110).split("<br>", 10)+".."}`}</p>
+                                        <p className="descripcion">{`User Reviews: ${game.reviewSummary === undefined ? 'Unknown' : game.reviewSummary.slice(0, isMobile() !== null ? 38 : 110).split("<br>", 10) + ".."}`}</p>
                                     </Col>
                                     <Col className="justify-content-center align-items-center">
                                         <Row className="mt-lg-2">
