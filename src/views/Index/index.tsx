@@ -123,11 +123,11 @@ export const Index = () => {
                                     </Col>
                                     <Col className="justify-content-center align-items-center">
                                         <Row className="mt-lg-2">
-                                            <Col lg={5} className={`${separar(game.price) === 0 || isNaN(separar(game.price)) ? "col-0" : "col-4 p-0"}`}>
-                                                {separar(game.price) === 0 || isNaN(separar(game.price)) ? "" : <p className="discount">{'-' + separar(game.price) + '%'}</p>}
+                                            <Col lg={5} className={`${separar(game?.price) === 0 || isNaN(separar(game?.price)) ? "col-0" : "col-4 p-0"}`}>
+                                                {separar(game?.price) === 0 || isNaN(separar(game?.price)) ? "" : <p className="discount">{'-' + separar(game?.price) + '%'}</p>}
                                             </Col>
-                                            <Col lg={7} style={{ display: "flex", justifyContent: "center" }} className={`${separar(game.price) === 0 || isNaN(separar(game.price)) ? "col-12" : "col-6 p-0"}`}>
-                                                <p className="precio float-end pe-lg-0 pe-1" style={{ textDecoration: (game.price.split("€")[1]) !== undefined && (game.price.split("€")[1].length) < 8 ? "line-through" : " " }}>{`${game.price.split("€")[0]}  ${handlePrice(game.price) === 'free to play' || handlePrice(game.price) === "free demo" || handlePrice(game.price) === '' || handlePrice(game.price) === "free" ? "" : "€"}`}</p>
+                                            <Col lg={7} style={{ display: "flex", justifyContent: "center" }} className={`${separar(game?.price) === 0 || isNaN(separar(game?.price)) ? "col-12" : "col-6 p-0"}`}>
+                                                <p className="precio float-end pe-lg-0 pe-1" style={{ textDecoration: (game?.price.split("€")[1]) !== undefined && (game?.price.split("€")[1].length) < 8 ? "line-through" : " " }}>{`${game?.price.split("€")[0]}  ${handlePrice(game?.price) === 'free to play' || handlePrice(game?.price) === "free demo" || handlePrice(game?.price) === '' || handlePrice(game?.price) === "free" ? "" : "€"}`}</p>
                                             </Col>
                                         </Row>
                                         <Row>
