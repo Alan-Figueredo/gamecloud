@@ -12,7 +12,7 @@ export const OptionsContextProvider = ({ children }: { children: ReactNode }) =>
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '75ce3804ddmsh29374f181ca40c7p1a6477jsn161ecc8e0e3f',
+            'X-RapidAPI-Key': '9dd2624f32mshff3fe71e7b43bc5p17adf6jsn97839d7dd3fc',
             'X-RapidAPI-Host': 'steam2.p.rapidapi.com'
         }
     };
