@@ -17,8 +17,8 @@ export const OptionsContextProvider = ({ children }) => {
         }
     };
 
-    function isMobile() {
-        return (
+    function isMobile(): boolean {
+        return !!(
             (navigator.userAgent.match(/Android/i)) ||
             (navigator.userAgent.match(/webOS/i)) ||
             (navigator.userAgent.match(/iPhone/i)) ||

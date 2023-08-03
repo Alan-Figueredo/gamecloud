@@ -7,7 +7,32 @@ import "./index.css"
 
 
 export const Index = () => {
-    const { isLoading, separar, games, setPage, page, setParameter, isMobile } = useOptionsContext()
+    interface Game {
+        appId: string | number | Partial<Path> | null | undefined;
+        imgUrl: string | undefined;
+        title: string;
+        reviewSummary: string | undefined;
+        price: string;
+    }
+
+    interface OptionsContextType {
+        isLoading: boolean;
+        separar: (price: string) => number;
+        games: Game[];
+        setPage: any;
+        page: number;
+        setParameter: any;
+        isMobile: boolean;
+    }
+    const {
+        isLoading,
+        separar,
+        games,
+        setPage,
+        page,
+        setParameter,
+        isMobile,
+    } = useOptionsContext() as OptionsContextType;
     const [gamesToShow, setGamesToShow] = useState(6);
 
 
@@ -83,7 +108,7 @@ export const Index = () => {
                         </Row>
                     </Col>
                 </Row>
-                {games ? games.slice(0, gamesToShow).map((game: { appId: string | number | Partial<Path> | null | undefined; imgUrl: string | undefined; title: string; reviewSummary: string | undefined; price: string; }) => {
+                {games ? games.slice(0, gamesToShow).map((game: Game) => {
                     return (
                         <Col lg={10} className="card mt-3 m-auto" key={game.appId}>
                             <Link to={game.appId} >
@@ -94,7 +119,7 @@ export const Index = () => {
                                     </Col>
                                     <Col lg={6} className="col-5 p-0">
                                         <h2 className="titulo">{game?.title.length >= 30 ? game?.title.slice(0, 30) + "..." : game?.title}</h2>
-                                        <p className="descripcion">{`User Reviews: ${game.reviewSummary === undefined ? 'Unknown' : game.reviewSummary.slice(0, isMobile() !== null ? 38 : 110).split("<br>", 10) + ".."}`}</p>
+                                        <p className="descripcion">{`User Reviews: ${game.reviewSummary === undefined ? 'Unknown' : game.reviewSummary.slice(0, isMobile !== null ? 38 : 110).split("<br>", 10) + ".."}`}</p>
                                     </Col>
                                     <Col className="justify-content-center align-items-center">
                                         <Row className="mt-lg-2">
