@@ -49,12 +49,12 @@ export const Index = () => {
         }
     };
 
-    function manejarKeyDown(evento: { key: string; target: { value: any; }; }) {
+    const manejarKeyDown = (evento: React.KeyboardEvent<HTMLInputElement>) => {
         if (evento.key === 'Enter') {
-            setParameter(evento.target.value)
-            setPage(1)
+            setParameter(evento.currentTarget.value);
+            setPage(1);
         }
-    }
+    };
 
     const handlePage = (type: string) => {
         if (type === "next") {
@@ -110,8 +110,8 @@ export const Index = () => {
                 </Row>
                 {games ? games.slice(0, gamesToShow).map((game: Game) => {
                     return (
-                        <Col lg={10} className="card mt-3 m-auto" key={game.appId}>
-                            <Link to={game.appId} >
+                        <Col lg={10} className="card mt-3 m-auto" key={game.appId?.toString()}>
+                            <Link to={game?.appId?.toString() || ''} >
 
                                 <Row>
                                     <Col lg={4} className="col-4">

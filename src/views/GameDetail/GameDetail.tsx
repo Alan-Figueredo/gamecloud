@@ -88,7 +88,7 @@ export const GameDetail = () => {
                         </Row>
                         <Row className="mt-5">
                             <Col lg={8}>
-                                <GameNews news={news && news} />
+                                <GameNews news={news!} />
                             </Col>
                             <Col>
                                 <GameAchievements achievement={achievement} />
