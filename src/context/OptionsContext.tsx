@@ -1,8 +1,8 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
 export const OptionsContext = createContext({});
 
-export const OptionsContextProvider = ({ children }) => {
+export const OptionsContextProvider = ({ children }: { children: ReactNode }) => {
     const [isLoading, setIsLoading] = useState(false)
     const [parameter, setParameter] = useState("positive")
     const [games, setGames] = useState([]);
