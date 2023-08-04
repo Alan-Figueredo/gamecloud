@@ -63,8 +63,7 @@ a {
     color: white;
     text-align: center;
     background-color: #59BF40 !important;
-    width: auto !important;
-
+    width: 90px ;
 }
 
 .ordenar option {

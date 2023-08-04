@@ -16,7 +16,7 @@ export const Index = () => {
         imgUrl: string | undefined;
         title: string;
         reviewSummary: string | undefined;
-        price: string ;
+        price: string;
     }
 
     interface OptionsContextType {
@@ -143,20 +143,18 @@ export const Index = () => {
     else {
         return (
             <Container id="index" className="pb-5">
-                <Row className="m-auto justify-content-center">
-                    <Col lg={8} >
+                <Row className="m-auto justify-content-sm-center align-items-center">
+                    <Col lg={8} className="col-8">
                         <input className=" my-lg-3 mt-2 form-control" placeholder="Search games" onKeyDown={manejarKeyDown} />
                     </Col>
-                    <Col lg={2} >
-                        <Row className="my-3">
-                            <select className="ordenar" name="ordenar" id="ordenar" onChange={(evt) => { handleSort(Number(evt.target.value)); }}>
-                                <option selected disabled>Sort By</option>
-                                <option value={1}>Alfabeticamente A-Z</option>
-                                <option value={2}>Alfabeticamente Z-A</option>
-                                {/* <option value={3}>Precio Menor-Mayor</option>
+                    <Col lg={2} className="mt-sm-3 mt-4 mb-3 col-2">
+                        <select className="ordenar" name="ordenar" id="ordenar" onChange={(evt) => { handleSort(Number(evt.target.value)); }}>
+                            <option selected disabled>Sort By</option>
+                            <option value={1}>Alfabeticamente A-Z</option>
+                            <option value={2}>Alfabeticamente Z-A</option>
+                            {/* <option value={3}>Precio Menor-Mayor</option>
                                     <option value={4}>Precio Mayor-Menor</option> */}
-                            </select>
-                        </Row>
+                        </select>
                     </Col>
                 </Row>
                 {games ? games.slice(0, gamesToShow).map((game: Game) => {
