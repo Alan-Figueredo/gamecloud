@@ -45,7 +45,7 @@ export const OptionsContextProvider = ({ children }: { children: ReactNode }) =>
         fetch(API_LINK, options).then(res => res.json()).then(data => { data && setGames(data); setIsLoading(false) });
     }, [page, parameter])
     return (
-        <OptionsContext.Provider value={{ separar, games, isLoading, setPage, page, setParameter, isMobile }}>
+        <OptionsContext.Provider value={{ separar, setGames, games, isLoading, setPage, page, setParameter, isMobile }}>
             {children}
         </OptionsContext.Provider>
     )

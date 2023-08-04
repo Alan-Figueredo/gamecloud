@@ -5,7 +5,8 @@
 .card {
     background-color: #2a475e !important;
 }
-#index{
+
+#index {
     min-height: 100vh;
     height: fit-content;
 }
@@ -54,43 +55,67 @@ a {
     text-align: center;
     font-weight: 500;
 }
-.discountPrice{
+
+.ordenar {
+    border: 0px;
+    padding: 7px 0px;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+    background-color: #59BF40 !important;
+    width: auto !important;
+
+}
+
+.ordenar option {
+    background-color: white !important;
+    color: #a9a9a9;
+}
+
+.discountPrice {
 
     color: #BEEE11;
     font-size: 20px;
 }
-.imagen{
+
+.imagen {
     height: -webkit-fill-available !important;
     width: 295px;
     height: 110px;
 }
 
-.btn-steam{
+.btn-steam {
     background-color: rgb(42, 71, 94) !important;
     color: rgb(102, 192, 244) !important;
     font-size: 20px !important;
 }
-.precio{
+
+.precio {
     font-size: 18px;
 }
+
 @media screen and (max-width:951px) {
-    .titulo{
+    .titulo {
         font-size: 14px;
     }
-    .descripcion{
+
+    .descripcion {
         font-size: 10px;
     }
-    .precio{
+
+    .precio {
         font-size: 10px !important;
     }
-    .discount{
+
+    .discount {
         font-size: 10px !important;
         padding: 2px !important;
         display: block !important;
         text-align: center !important;
         font-weight: 500 !important;
     }
-    .discountPrice{
+
+    .discountPrice {
         font-size: 10px !important;
     }
 }

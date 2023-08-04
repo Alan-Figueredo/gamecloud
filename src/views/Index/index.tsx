@@ -7,17 +7,22 @@ import "./index.css"
 
 
 export const Index = () => {
+
+
+
+
     interface Game {
         appId: string | number | Partial<Path> | null | undefined;
         imgUrl: string | undefined;
         title: string;
         reviewSummary: string | undefined;
-        price: string;
+        price: string ;
     }
 
     interface OptionsContextType {
         isLoading: boolean;
         separar: (price: string) => number;
+        setGames: React.Dispatch<React.SetStateAction<Game[]>>;
         games: Game[];
         setPage: any;
         page: number;
@@ -27,6 +32,7 @@ export const Index = () => {
     const {
         isLoading,
         separar,
+        setGames,
         games,
         setPage,
         page,
@@ -34,6 +40,61 @@ export const Index = () => {
         isMobile,
     } = useOptionsContext() as OptionsContextType;
     const [gamesToShow, setGamesToShow] = useState(6);
+
+    //ordenar
+    const ordenarMayor = (games: Game[]) => {
+        games.sort((a, b) => {
+            if (a.title < b.title) {
+                return -1
+            }
+            else if (a.title > b.title) {
+                return 1
+            }
+            else {
+                return 0
+            }
+        })
+    }
+    const ordenarMenor = (games: Game[]) => {
+        games.sort((a, b) => {
+            if (a.title < b.title) {
+                return 1
+            }
+            else if (a.title > b.title) {
+                return -1
+            }
+            else {
+                return 0
+            }
+        })
+    }
+
+    //ORdenar por precio, por el momento la API no considera el precio (anteriormente si)
+    // const ordenarPrecioMayor = (games: Game[]) => {
+    //     games.sort(function (a, b) { return a.price - b.price })
+    // }
+    // const ordenarPrecioMenor = (games: Game[]) => {
+    //     games.sort(function (a, b) { return b.price - a.price })
+    // }
+
+    const handleSort = (value: number) => {
+        switch (value) {
+            case 1:
+                ordenarMayor(games); setGames([...games])
+                break;
+            case 2:
+                ordenarMenor(games); setGames([...games])
+                break;
+            // case 3:
+            //     ordenarPrecioMayor(games); setGames([...games])
+            //     break;
+            // case 4:
+            //     ordenarPrecioMenor(games); setGames([...games])
+            //     break;
+            default:
+                console.log("ok")
+        }
+    }
 
 
 
@@ -87,24 +148,14 @@ export const Index = () => {
                         <input className=" my-lg-3 mt-2 form-control" placeholder="Search games" onKeyDown={manejarKeyDown} />
                     </Col>
                     <Col lg={2} >
-                        <Row className="my-3 ">
-                            <Col>
-                                <p>Sort by</p>
-                            </Col>
-                            <Col>
-                                <Dropdown>
-                                    <Dropdown.Toggle style={{ backgroundColor: "#4c6b22", color: "#BEEE11", border: "0px" }} id="dropdown-basic">
-                                        Relevance
-                                    </Dropdown.Toggle>
-
-                                    <Dropdown.Menu>
-                                        <Dropdown.Item href="#/action-2">Release date</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-3">Name</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-3">Lower price</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-3">Higher price</Dropdown.Item>
-                                    </Dropdown.Menu>
-                                </Dropdown>
-                            </Col>
+                        <Row className="my-3">
+                            <select className="ordenar" name="ordenar" id="ordenar" onChange={(evt) => { handleSort(Number(evt.target.value)); }}>
+                                <option selected disabled>Sort By</option>
+                                <option value={1}>Alfabeticamente A-Z</option>
+                                <option value={2}>Alfabeticamente Z-A</option>
+                                {/* <option value={3}>Precio Menor-Mayor</option>
+                                    <option value={4}>Precio Mayor-Menor</option> */}
+                            </select>
                         </Row>
                     </Col>
                 </Row>
