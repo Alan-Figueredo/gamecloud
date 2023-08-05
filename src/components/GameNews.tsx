@@ -10,6 +10,9 @@ interface News {
 export const GameNews = (props: { news: News; }) => {
 
     const news = props.news;
+    if(!news?.appnews?.newsitems){
+        return <></>
+    }
     return (
         <>
             <h2>RECENT EVENTS & ANNOUNCEMENTS</h2>

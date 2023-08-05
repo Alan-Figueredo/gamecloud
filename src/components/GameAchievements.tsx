@@ -4,10 +4,9 @@ import { Col, Row } from "react-bootstrap";
 export const GameAchievements = (props: { achievement: any; }) => {
     const achievement = props.achievement;
     const [achieveQuantity, setAchieveQuantity] = useState(10)
-    console.log(achievement)
     return (
         <>
-            {achievement &&
+            {achievement?.achievementpercentages?.achievements &&
 
                 <section className="card ms-lg-1 ms-0 mt-lg-0 mt-3" >
                     <h2 style={{ fontSize: "23px", padding: "10px" }}>Includes  Steam Achievements</h2>

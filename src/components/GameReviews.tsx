@@ -12,6 +12,10 @@ export const GameReviews = (props: { reviewQuantity: any; gameReview: any; }) =>
     const reviewQuantity = props.reviewQuantity;
     const [reviewParameter, setReviewParameter] = useState(500)
     const gameReview = props.gameReview;
+    console.log(gameReview)
+    if(!gameReview?.reviews[0]){
+        return <></>
+    }
     return (
         <div className="col-lg-8 col-12">
             <h2>REVIEWS</h2>
