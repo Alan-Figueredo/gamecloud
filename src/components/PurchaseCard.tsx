@@ -13,7 +13,7 @@ export const PurchaseCard = (props: { game: any }) => {
                         <Col lg={8} className="col-7">
                             <h2 className="my-3" style={{ fontSize: "23px" }}>{game.price}</h2>
                         </Col>
-                        <Button className="my-1 addToCart col-sm col-2 me-1">Add to cart</Button>
+                        <Button className="my-1 addToCart col-sm col-2">Add to cart</Button>
                     </Row>
                 </Col>
             </Row>
