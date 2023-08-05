@@ -107,6 +107,7 @@ a {
 
     .imagen {
         max-height: fit-content;
+        height: fit-content;
         width: 295px;
     }
 
