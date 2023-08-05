@@ -78,8 +78,8 @@ a {
 }
 
 .imagen {
+    height: -webkit-fill-available !important;
     width: 295px;
-    height: 110px;
 }
 
 .btn-steam {
