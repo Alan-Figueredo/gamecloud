@@ -105,6 +105,11 @@ a {
         font-size: 10px !important;
     }
 
+    .imagen {
+        max-height: fit-content;
+        width: 295px;
+    }
+
     .discount {
         font-size: 10px !important;
         padding: 2px !important;
