@@ -19,10 +19,10 @@ export const GameContent = (props: { content: any }) => {
                         <a href={`${dlc.url}`} target="_blank" key={dlc.url}>
                             <section className="card my-1">
                                 <Row>
-                                    <Col className="ps-4 pt-2" lg={10}>
+                                    <Col className="ps-4 pt-2 col-8" lg={10}>
                                         <p>{dlc.name}</p>
                                     </Col>
-                                    <Col className="ms-5 pt-2">
+                                    <Col className="ms-5 pt-2 col">
                                         <p>{dlc.price}</p>
                                     </Col>
                                 </Row>
