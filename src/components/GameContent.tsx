@@ -16,7 +16,7 @@ export const GameContent = (props: { content: any }) => {
                 <hr style={{ color: "white" }} />
                 {content.DLCs.map((dlc: { url: string; name: string; price: string }) => {
                     return (
-                        <a href={`${dlc.url}`} target="_blank" key={dlc.url}>
+                        <a href={`${dlc.url}`} target="_blank" style={{color:"#66c0f4"}} key={dlc.url}>
                             <section className="card my-1">
                                 <Row>
                                     <Col className="ps-4 pt-2 col-8" lg={10}>
