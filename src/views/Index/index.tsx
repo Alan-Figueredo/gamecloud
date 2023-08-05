@@ -111,7 +111,7 @@ export const Index = () => {
     };
 
     const manejarKeyDown = (evento: React.KeyboardEvent<HTMLInputElement>) => {
-        if (evento.key === 'Enter') {
+        if (evento.key === 'Enter'|| evento.keyCode === 13) {
             setParameter(evento.currentTarget.value);
             setPage(1);
         }
