@@ -144,10 +144,10 @@ export const Index = () => {
         return (
             <Container id="index" className="pb-5">
                 <Row className="m-auto justify-content-sm-center align-items-center">
-                    <Col lg={8} className="col-8">
+                    <Col lg={9} className="col-8 p-1">
                         <input className=" my-lg-3 mt-2 form-control" placeholder="Search games" onKeyDown={manejarKeyDown} />
                     </Col>
-                    <Col lg={2} className="mt-sm-3 mt-4 mb-3 col-2">
+                    <Col lg={1} className="mt-sm-3 mt-4 mb-3 col-2">
                         <select className="ordenar" name="ordenar" id="ordenar" onChange={(evt) => { handleSort(Number(evt.target.value)); }}>
                             <option selected disabled>Sort By</option>
                             <option value={1}>Alfabeticamente A-Z</option>

@@ -26,7 +26,7 @@ export const GameDetail = () => {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '1c02e6db93mshfd6daaa7314a48ep1d3c26jsnea324a1edbc9',
+            'X-RapidAPI-Key': '75ce3804ddmsh29374f181ca40c7p1a6477jsn161ecc8e0e3f',
             'X-RapidAPI-Host': 'steam2.p.rapidapi.com'
         }
     };

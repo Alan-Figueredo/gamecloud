@@ -13,7 +13,7 @@ export const GameReviews = (props: { reviewQuantity: any; gameReview: any; }) =>
     const [reviewParameter, setReviewParameter] = useState(500)
     const gameReview = props.gameReview;
     console.log(gameReview)
-    if(!gameReview?.reviews[0]){
+    if (gameReview?.reviews?.length < 0) {
         return <></>
     }
     return (
